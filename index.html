@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Pricing Component solution for Frontendmentor.io Junior Challenge">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive Pricing Component</title>
 </head>
+
 <body>
+  <main>
+    <div class="intro">
+      <h1 class="intro__title">Simple, traffic-based pricing</h1>
+      <p class="intro__subtitle">Sign-up for our 30-day trial. No credit card required.</p>
+    </div>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <form action="" class="component">
+      <label class="visually-hidden" for="pageview">Set Pageviews</label>
+      <div class="component__pricing">
+        <div class="component__pricing-amount">
+          <p><span id="viewcount"></span>PAGEVIEWS</p>
+        </div>
+        <div class="component__pricing-total">
+          <p>
+            $<span id="value">00.00</span>
+            <span id="text"> / month</span>
+          </p>
+        </div>
+        <div class="component__pricing-slider">
+          <input type="range" name="pageview" id="pageview" min="0" max="100" step="25" value="50">
+        </div>
+      </div>
 
-  Pageviews
-  $ /month
+      <div class="billing">
+        <p>Monthly Billing</p>
+        <div class="billing__button-container">
+          <button type="button" name="toggle"></button>
+        </div>
+        <div class="billing__wrapper">
+          <p>Yearly Billing</p>
+          <p class="billing__discount">
+            <span class="value">10%</span>
+            <span class="text">discount</span>
+          </p>
+        </div>
+      </div>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+      <div class="details">
+        <ul class="details__text">
+          <li>
+            <img src="./images/icon-check.svg" alt="">
+            <p>Unlimited websites</p>
+          </li>
+          <li>
+            <img src="./images/icon-check.svg" alt="">
+            <p>100% data ownership</p>
+          </li>
+          <li>
+            <img src="./images/icon-check.svg" alt="">
+            <p>Email reports</p>
+          </li>
+        </ul>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+        <div class="details__submit">
+          <input type="submit" value="Start my trial">
+        </div>
+      </div>
+    </form>
+  </main>
 
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </footer>
 </body>
+
 </html>
