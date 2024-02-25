@@ -1,7 +1,10 @@
 const sliderEl = document.querySelector('#pageview');
 const toggleBtn = document.querySelector('.billing__button-container button');
 const pageviews = document.querySelector('.viewcount');
-const costTotal = document.querySelector('.component__pricing-total .value');
+const costTotal = document.querySelector(
+  '.component__pricing-total .value span'
+);
+const costTotalText = document.querySelector('.component__pricing-total .text');
 
 const pageviewPackages = [
   { view: '10K', cost: 8 },
@@ -11,16 +14,18 @@ const pageviewPackages = [
   { view: '1M', cost: 36 },
 ];
 
-const DISCOUNT = 0.25;
-
 function changeViewData(object, i) {
   return object[i][1].view;
 }
 function changeCostData(object, i) {
-  const cost = object[i][1].cost;
-  const yearlyCost = object[i][1].cost * 12 * (1 - DISCOUNT);
-  const costWithDecimals = cost.toFixed(2);
-  return '$' + costWithDecimals;
+  const DISCOUNT = 0.25;
+  const COST = object[i][1].cost;
+  const YEARLY_COST = object[i][1].cost * 12 * (1 - DISCOUNT);
+  if (!toggleBtn.classList.contains('toggled')) {
+    return COST.toFixed(2);
+  } else {
+    return YEARLY_COST.toFixed(2);
+  }
 }
 
 function displayCostData(progress) {
@@ -55,18 +60,26 @@ function displayCostData(progress) {
   }
 }
 
+let progressStore = 0;
 sliderEl.addEventListener('input', () => {
   const sliderProgress = (sliderEl.value / sliderEl.max) * 100;
 
   displayCostData(sliderProgress);
 
+  progressStore = sliderProgress;
   sliderEl.style.background = `linear-gradient(
     to right,
-    var(--clr-primary-dark) ${sliderProgress}%,
+    var(--clr-primary-light) ${sliderProgress}%,
     var(--clr-neutral-light) ${sliderProgress}%
   )`;
 });
 
 toggleBtn.parentElement.addEventListener('click', () => {
   toggleBtn.classList.toggle('toggled');
+  displayCostData(progressStore);
+  costTotalText.innerHTML = '/ year';
+
+  if (!toggleBtn.classList.contains('toggled')) {
+    costTotalText.innerHTML = '/ month';
+  }
 });
