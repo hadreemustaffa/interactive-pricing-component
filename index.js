@@ -5,6 +5,7 @@ const costTotal = document.querySelector(
   '.component__pricing-total .value span'
 );
 const costTotalText = document.querySelector('.component__pricing-total .text');
+const form = document.querySelector('form');
 
 const pageviewPackages = [
   { view: '10K', cost: 8 },
@@ -82,4 +83,8 @@ toggleBtn.parentElement.addEventListener('click', () => {
   if (!toggleBtn.classList.contains('toggled')) {
     costTotalText.innerHTML = '/ month';
   }
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 });
