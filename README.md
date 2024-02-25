@@ -9,7 +9,7 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/interactive-pricing-component-using-flexbox-grid-and-vanilla-js-c8uAw2ZWaM)
+- Live Site URL: [Github Pages](https://hadreemustaffa.github.io/interactive-pricing-component/)
 
 ## My process
 
@@ -37,8 +37,6 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-### What I learned
 
 ### Useful resources
 
