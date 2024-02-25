@@ -248,6 +248,10 @@ form {
   border: 1px solid transparent;
   transition: translate 0.25s ease;
 }
+.billing__button-container button:focus-visible {
+  outline: 2px solid black;
+}
+
 .billing__wrapper {
   display: flex;
   flex-direction: row;
@@ -294,6 +298,10 @@ form {
   color: var(--clr-tertiary-light);
   outline: 1px solid transparent;
   border: 1px solid transparent;
+}
+.details__submit input:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid black;
 }
 
 .attribution {
